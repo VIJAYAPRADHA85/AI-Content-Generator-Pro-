@@ -1,0 +1,257 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>AI Content Generator Pro</title>
+    <link rel="stylesheet" href="styles.css" />
+  </head>
+  <body>
+    <div class="app-shell">
+      <header class="hero-panel">
+        <div class="hero-copy">
+          <span class="eyebrow">AI Content Suite</span>
+          <h1>AI Content Generator Pro Max</h1>
+          <p>
+            Build copy, chatbot scripts, product messaging, landing pages, and marketing campaigns with a next-level AI writing studio.
+          </p>
+          <div class="hero-actions">
+            <button id="scrollToForm" class="button button-primary">Launch Your AI Studio</button>
+            <a href="#history" class="button button-secondary">Review History</a>
+          </div>
+        </div>
+        <div class="hero-visual">
+          <div class="card card-highlight">
+            <span>AI Development</span>
+            <strong>Writing, Chatbots, Models</strong>
+          </div>
+          <div class="card card-glow">
+            <span>Advanced Output</span>
+            <strong>SEO, Story, Ad, Email</strong>
+          </div>
+          <div class="card card-glow">
+            <span>Performance</span>
+            <strong>Fast, Smart, Polished</strong>
+          </div>
+        </div>
+      </header>
+
+      <main class="layout-grid">
+        <section class="panel generator-panel" id="generator">
+          <div class="panel-heading">
+            <h2>Advanced Content Builder</h2>
+            <p>Choose your tone, format, keywords and style—then generate like a pro.</p>
+          </div>
+
+          <form id="generatorForm" class="generator-form">
+            <div class="grid-two">
+              <label>
+                Content Type
+                <select id="contentType" required>
+                  <option value="blog">Blog Article</option>
+                  <option value="ad">Ad Copy</option>
+                  <option value="email">Marketing Email</option>
+                  <option value="social">Social Media Post</option>
+                  <option value="landing">Landing Page</option>
+                  <option value="chatbot">AI Chatbot Script</option>
+                  <option value="product">Product Description</option>
+                  <option value="seo">SEO Landing Page</option>
+                  <option value="press">Press Release</option>
+                </select>
+              </label>
+
+              <label>
+                Output Style
+                <select id="outputStyle" required>
+                  <option value="classic">Classic Conversion</option>
+                  <option value="story">Story-Driven</option>
+                  <option value="listicle">Listicle</option>
+                  <option value="review">Review Style</option>
+                  <option value="tutorial">Step-by-Step Guide</option>
+                  <option value="chatbot">Chatbot Persona</option>
+                </select>
+              </label>
+            </div>
+
+            <div class="grid-two">
+              <label>
+                Tone
+                <select id="tone" required>
+                  <option value="professional">Professional</option>
+                  <option value="friendly">Friendly</option>
+                  <option value="energetic">Energetic</option>
+                  <option value="luxury">Luxury</option>
+                  <option value="bold">Bold</option>
+                </select>
+              </label>
+
+              <label>
+                Brand Voice
+                <select id="brandVoice">
+                  <option value="trustworthy">Trustworthy</option>
+                  <option value="innovative">Innovative</option>
+                  <option value="luxury">Luxury</option>
+                  <option value="friendly">Friendly</option>
+                  <option value="authoritative">Authoritative</option>
+                </select>
+              </label>
+            </div>
+
+            <label>
+              Target Audience
+              <input id="audience" type="text" placeholder="Entrepreneurs, busy parents, tech fans" />
+            </label>
+
+            <label>
+              Keywords / Focus Points
+              <input id="keywords" type="text" placeholder="SEO, growth, productivity" />
+            </label>
+
+            <div class="grid-three">
+              <label>
+                Language
+                <select id="language">
+                  <option value="English">English</option>
+                  <option value="Spanish">Spanish</option>
+                  <option value="French">French</option>
+                  <option value="German">German</option>
+                  <option value="Hindi">Hindi</option>
+                  <option value="Chinese">Chinese</option>
+                  <option value="Arabic">Arabic</option>
+                  <option value="Portuguese">Portuguese</option>
+                  <option value="Russian">Russian</option>
+                  <option value="Japanese">Japanese</option>
+                  <option value="Korean">Korean</option>
+                  <option value="Italian">Italian</option>
+                  <option value="Dutch">Dutch</option>
+                  <option value="Turkish">Turkish</option>
+                  <option value="Indonesian">Indonesian</option>
+                  <option value="Vietnamese">Vietnamese</option>
+                  <option value="Thai">Thai</option>
+                </select>
+              </label>
+
+              <label>
+                Content Goal
+                <select id="goal">
+                  <option value="convert">Increase conversions</option>
+                  <option value="educate">Educate audience</option>
+                  <option value="entertain">Entertain and engage</option>
+                  <option value="inform">Inform and build trust</option>
+                  <option value="launch">Launch a product</option>
+                </select>
+              </label>
+
+              <label>
+                Content Depth
+                <select id="depth">
+                  <option value="short">Short & punchy</option>
+                  <option value="medium" selected>Standard detail</option>
+                  <option value="long">Expanded coverage</option>
+                  <option value="epic">Epic long-form</option>
+                </select>
+              </label>
+            </div>
+
+            <div class="grid-two">
+              <label>
+                Creativity
+                <input id="creativity" type="range" min="1" max="10" value="7" />
+              </label>
+
+              <label>
+                Length
+                <input id="length" type="range" min="150" max="1000" value="450" />
+              </label>
+            </div>
+
+            <div class="panel split-panel">
+              <label class="checkbox-wrap">
+                <input id="includeSeo" type="checkbox" checked />
+                <span>SEO optimized content</span>
+              </label>
+              <label class="checkbox-wrap">
+                <input id="includeCta" type="checkbox" checked />
+                <span>Strong call-to-action</span>
+              </label>
+            </div>
+
+            <label class="stretch">
+              Custom Prompt (optional)
+              <textarea id="customPrompt" rows="4" placeholder="Add special instructions or brand voice details..."></textarea>
+            </label>
+
+            <label class="stretch">
+              OpenAI API Key (optional)
+              <input id="apiKey" type="password" placeholder="sk-..." autocomplete="new-password" />
+            </label>
+
+            <div class="form-actions">
+              <button type="submit" class="button button-primary">Generate Content</button>
+              <button type="button" id="clearForm" class="button button-muted">Reset</button>
+            </div>
+          </form>
+
+          <div class="prompt-preview-panel">
+            <div class="panel-heading">
+              <h3>Prompt Builder Preview</h3>
+              <p>Review the AI command before generation.</p>
+            </div>
+            <pre id="promptPreview" class="prompt-preview"></pre>
+          </div>
+
+          <div class="status-bar" id="statusBar">Ready to create content.</div>
+        </section>
+
+        <section class="panel output-panel">
+          <div class="panel-heading">
+            <h2>Generated Copy</h2>
+            <p>Review, refine, and copy instantly.</p>
+          </div>
+
+          <div class="output-actions">
+            <button id="copyOutput" class="button button-secondary">Copy Text</button>
+            <button id="downloadText" class="button button-secondary">Download TXT</button>
+            <button id="saveHistory" class="button button-secondary">Save to History</button>
+          </div>
+
+          <pre id="output" class="output-area">Your generated content appears here after you click Generate.</pre>
+        </section>
+      </main>
+
+      <section class="panel history-panel" id="history">
+        <div class="panel-heading">
+          <h2>Generation History</h2>
+          <p>Saved outputs are stored locally in your browser.</p>
+        </div>
+
+        <div id="historyList" class="history-list">
+          <div class="history-empty">No saved content yet. Generate something amazing.</div>
+        </div>
+      </section>
+
+      <section class="panel feature-panel">
+        <div class="feature-grid">
+          <article>
+            <h3>AI Content Creation</h3>
+            <p>Generate blog posts, ads, emails, social media, landing pages, and more with expert-level output.</p>
+          </article>
+          <article>
+            <h3>AI Chatbot Dev</h3>
+            <p>Build chatbot scripts and conversational flows for customer support and lead capture.</p>
+          </article>
+          <article>
+            <h3>AI Model Ready</h3>
+            <p>Designed for AI writing, prompt engineering, and advanced marketing automation workflows.</p>
+          </article>
+          <article>
+            <h3>SEO & Conversion</h3>
+            <p>Use SEO optimization and CTA-driven copy to turn visitors into customers.</p>
+          </article>
+        </div>
+      </section>
+    </div>
+
+    <script src="script.js"></script>
+  </body>
+</html>
